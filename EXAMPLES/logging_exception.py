@@ -2,7 +2,7 @@
 import logging
 
 logging.basicConfig( # configure logging
-    filename='../TEMP/exception.log',
+    filename='../LOGS/exception.log',
     level=logging.WARNING,  # minimum level
 )
 

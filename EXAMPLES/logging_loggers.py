@@ -4,7 +4,7 @@ import logging
 logging.basicConfig(
     format='%(levelname)s %(name)s %(asctime)s %(filename)s %(lineno)d %(message)s', # format log entry
     datefmt="%Y:%M:%S::%X",  # set date/time format
-    filename='../TEMP/loggers.log',
+    filename='../LOGS/loggers.log',
     level=logging.INFO,
 )
 

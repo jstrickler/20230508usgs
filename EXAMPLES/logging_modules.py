@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(level=logging.DEBUG, filename="../TEMP/modules.log")
+logging.basicConfig(level=logging.DEBUG, filename="../LOGS/modules.log")
 
 logger = logging.getLogger(__name__)
 

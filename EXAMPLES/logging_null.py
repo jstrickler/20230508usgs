@@ -1,8 +1,9 @@
 import logging
 
 logging.basicConfig(
-    filename='../LOGS/simple.log',
+    # filename='../LOGS/simple.log',
     level=logging.WARNING,
+    handlers=[logging.NullHandler()],
 )
 
 logging.warning('This is a warning') # message will be output
