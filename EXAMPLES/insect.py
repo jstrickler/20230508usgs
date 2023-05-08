@@ -28,3 +28,5 @@ if __name__ == '__main__':
         )
         insect.make_sound()  # .make_sound inherited from Animal
         print()
+
+
