@@ -1,4 +1,4 @@
-
+import logging
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,6 +10,7 @@ class DraggableRectangle:
 
     def connect(self):
         'connect to all the events we need'
+        logging.debug("connecting to events")
         self.cidpress = self.rect.figure.canvas.mpl_connect(
             'button_press_event', self.on_press)
         self.cidrelease = self.rect.figure.canvas.mpl_connect(
@@ -28,6 +29,7 @@ class DraggableRectangle:
 
         print('event contains', self.rect.xy)
         x_coord, y_coord = self.rect.xy
+        logging.debug(f'mouse was clicked at %s/%s', x_coord, y_coord)
         self.press = x_coord, y_coord, event.xdata, event.ydata
 
     def on_motion(self, event):
@@ -61,6 +63,7 @@ ax = fig.add_subplot(111)
 rects = ax.bar(range(10), 20 * np.random.rand(10))
 drs = []
 for rect in rects:
+    logging.debug("processing %s", rect)
     dr = DraggableRectangle(rect)
     dr.connect()
     drs.append(dr)

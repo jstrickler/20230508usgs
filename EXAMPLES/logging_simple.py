@@ -2,10 +2,13 @@ import logging
 
 logging.basicConfig(
     filename='../LOGS/simple.log',
-    level=logging.WARNING,
+    level=logging.DEBUG,
 )
 
+# your code
 logging.warning('This is a warning') # message will be output
+# your code
+
 logging.debug('This message is for debugging') # message will NOT be output
 logging.error('This is an ERROR') # message will be output
 logging.critical('This is ***CRITICAL***') # message will be output

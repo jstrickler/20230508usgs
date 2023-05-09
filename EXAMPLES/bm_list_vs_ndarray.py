@@ -2,7 +2,7 @@ from timeit import Timer
 
 setup_code = """
 import numpy as np
-SIZE = 100_000
+SIZE = 1_000_000
 """
 
 codes = [
