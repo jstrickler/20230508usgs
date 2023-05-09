@@ -19,4 +19,3 @@ def test_first_name(person):  # pass fixture as test parameter
 
 def test_last_name(person):  # pass fixture as test parameter
     assert person.last_name == LAST_NAME
-

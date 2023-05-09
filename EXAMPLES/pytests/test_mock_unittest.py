@@ -3,7 +3,6 @@ from unittest.mock import Mock
 
 ham = Mock()  # Create mock version of ham() function
 
-
 # system under test
 class Spam():  # System (class) under test
     def __init__(self, param):
