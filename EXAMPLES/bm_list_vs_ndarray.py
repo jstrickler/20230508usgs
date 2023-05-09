@@ -2,7 +2,7 @@ from timeit import Timer
 
 setup_code = """
 import numpy as np
-SIZE = 1_000_000
+SIZE = 100_000
 """
 
 codes = [
@@ -16,7 +16,7 @@ codes = [
 
 for code in codes:
     t = Timer(code, setup_code)
-    print(code, '\n')
+    print(code)
     print(t.timeit(100))
-    print()
+    print('-' * 20)
 
