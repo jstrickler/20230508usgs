@@ -1,4 +1,4 @@
-from singledispatch import singledispatch
+from functools import singledispatch
 from io import TextIOWrapper
 
 @singledispatch

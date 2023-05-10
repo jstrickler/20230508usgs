@@ -1,9 +1,14 @@
-
 from itertools import groupby
 
 with open('../DATA/words.txt') as words_in:  # open file for reading
     all_words = (w.rstrip() for w in words_in)  # create generator of all words, stripped of the trailing '
 
+    g = groupby(all_words, key=lambda e: e[0])  # create a groupby() object where the key is the first character in the word
+
+    for letter, word_list in g:
+        words = list(word_list)
+        print(letter, len(words), words[:5])
+    
     g = groupby(all_words, key=lambda e: e[0])  # create a groupby() object where the key is the first character in the word
 
     counts = {letter: len(list(wlist)) for letter, wlist in g}  # make a dictionary where the key is the first character, and the value is the number of words that start with that character; groupby groups all the words, then len() counts the number of words for that character
