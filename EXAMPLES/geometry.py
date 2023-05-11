@@ -12,7 +12,6 @@ from functools import lru_cache
 
 PI = math.pi
 
-@lru_cache()
 def circle_area(diameter):
     """
     Compute the area of a circle from a given diameter
