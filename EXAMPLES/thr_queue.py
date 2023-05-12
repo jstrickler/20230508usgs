@@ -4,7 +4,7 @@ from threading import Thread, Lock as tlock
 import time
 
 NUM_ITEMS = 30000
-POOL_SIZE = 128
+POOL_SIZE = 64
 
 word_queue = queue.Queue(0)  # initialize empty queue
 
@@ -17,10 +17,9 @@ class RandomWord():  # define callable class to generate words
     def __init__(self):
         with open('../DATA/words.txt') as words_in:
             self._words = [word.rstrip('\n\r') for word in words_in.readlines()]
-        self._num_words = len(self._words)
 
     def __call__(self):
-        return self._words[random.randrange(0, self._num_words)]
+        return random.choice(self._words)
 
 
 class Worker(Thread):  # worker thread
@@ -33,7 +32,7 @@ class Worker(Thread):  # worker thread
         while True:
             try:
                 s1 = word_queue.get(block=False)  # get next item from thread
-                s2 = s1.upper() + '-' + s1.upper()
+                s2 = s1.upper() + '-' + s1.lower()
                 with shared_list_lock:  # acquire lock, then release when done
                     shared_list.append(s2)
 

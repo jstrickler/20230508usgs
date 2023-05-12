@@ -5,6 +5,7 @@ from omdblib import OMDBasync
 
 async def get_rt_score(title, session, omdb):
     movie = await omdb.title_search(title, session=session)
+    # code....
     return movie.rotten_tomatoes_score
 
 
